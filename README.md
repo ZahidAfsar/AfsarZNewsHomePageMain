@@ -1,3 +1,17 @@
+// Zahid Afsar
+
+// 2 - 6 - 24
+
+// Tech News Home Page
+
+// Download and open the project, the prototype of the site is in the design folder inside the code.  Copy the design with the best of your abilities using the sources provided in the code.
+
+// Peer Reviewed by : 
+
+// Peer Comment : 
+
+
+
 # Frontend Mentor - News homepage
 
 ![Design preview for the News homepage coding challenge](./design/desktop-preview.jpg)
