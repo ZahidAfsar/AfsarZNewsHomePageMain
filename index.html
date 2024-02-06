@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+
+  <link href="/dist/output.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+
+  <title>Frontend Mentor | News homepage</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body class="bg-custom-offwhite">
+
+ <!-- Nav Bar -->
+  <nav>
+    <div
+      class="flex flex-wrap items-center justify-between xl:mx-[168px] lg:mx-[150px] xl:mt-[88px] xl:mb-8 mx-5 mt-8 mb-9">
+      <!-- Logos -->
+      <a href="" class="flex items-center xl:space-x-3 rtl:space-x-reverse">
+        <img src="./assets/images/logo.svg" class="md:block hidden" alt="Nav logo Img" />
+        <img src="./assets/images/logo.svg" class="md:hidden w-[75%]" alt="Nav Logo Img" />
+      </a>
+
+      <!-- Hamburger Nav Img -->
+      <button id="NavHamburger" type="button"
+        class="inline-flex items-center text-sm text-gray-500 rounded-lg md:hidden">
+        <span class="sr-only">Mobile sidebar</span>
+        <svg width="40" height="17" xmlns="http://www.w3.org/2000/svg">
+          <g fill="hsl(240, 100%, 5%)" fill-rule="evenodd">
+            <path d="M0 0h40v3H0zM0 7h40v3H0zM0 14h40v3H0z" />
+            <path d="M0 0h40v3H0z" />
+          </g>
+        </svg>
+      </button>
+
+      <!-- Desktop Navbar -->
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul
+          class="font-medium flex md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-[42px] rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <li>
+            <a href="#" class="block border-0 p-0 text-custom-grayishblue hover:text-custom-red  font-Inter">Home</a>
+          </li>
+          <li>
+            <a href="#" class="block border-0 p-0 text-custom-grayishblue hover:text-custom-red font-Inter">New</a>
+          </li>
+          <li>
+            <a href="#" class="block border-0 p-0 text-custom-grayishblue hover:text-custom-red font-Inter">Popular</a>
+          </li>
+          <li>
+            <a href="#" class="block border-0 p-0 text-custom-grayishblue hover:text-custom-red font-Inter">Trending</a>
+          </li>
+          <li>
+            <a href="#"
+              class="block border-0 p-0 text-custom-grayishblue hover:text-custom-red font-Inter">Categories</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Mobile Navbar -->
+      <aside id="MobileSideBar" class="fixed top-0 right-0 z-40 w-60 h-screen transition-transform hidden"
+        aria-label="Sidebar">
+        <div class="h-full px-4 py-4 overflow-y-auto bg-custom-offwhite">
+          <div class="flex justify-end mt-3 mr-2 mb-20 cursor-pointer">
+            <svg id="closeButton" width="32" height="31" xmlns="http://www.w3.org/2000/svg">
+              <g fill="hsl(240, 100%, 5%)" fill-rule="evenodd">
+                <path d="m2.919.297 28.284 28.284-2.122 2.122L.797 2.419z" />
+                <path d="M.797 28.581 29.081.297l2.122 2.122L2.919 30.703z" />
+              </g>
+            </svg>
+          </div>
+          <ul class="space-y-0 font-medium">
+            <li>
+              <a href="#"
+                class="flex items-center p-2 text-custom-darkBlue  dark:text-white hover:text-custom-red dark:hover:bg-gray-700 group">
+                <span class="text-2xl">Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="flex items-center p-2 text-custom-darkBlue  dark:text-white hover:text-custom-red dark:hover:bg-gray-700 group">
+                <span class="flex-1 text-2xl whitespace-nowrap">New</span>
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="flex items-center p-2 text-custom-darkBlue  dark:text-white hover:text-custom-red dark:hover:bg-gray-700 group">
+                <span class="flex-1 text-2xl whitespace-nowrap">Popular</span>
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="flex items-center p-2 text-custom-darkblue dark:text-white hover:text-custom-red dark:hover:bg-gray-700 group">
+                <span class="flex-1 text-2xl whitespace-nowrap">Trending</span>
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="flex items-center p-2 text-custom-darkBlue dark:text-white hover:text-custom-red dark:hover:bg-gray-700 group">
+                <span class="flex-1 text-2xl whitespace-nowrap">Categories</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </nav>
+
+<!-- Background for the mobile nav bar -->
+<div id="mobileNavWhiteBG" class="hidden bg-gray-700/60 fixed inset-0 z-30 dark:bg-gray-700/60"></div>
+
+  <div class="xl:grid xl:grid-cols-[66.75%_33.25%] xl:mx-[168px] lg:mx-[150px] mx-5">
+    <div class="xl:grid-rows-[55%_45%] xl:mr-8">
+      <div class="xl:mb-10">
+        <img class="sm:block hidden" src="./assets/images/image-web-3-desktop.jpg" alt="DesktopImg" />
+        <img class="sm:hidden" src="./assets/images/image-web-3-mobile.jpg" alt="MobileImg" />
+      </div>
+      <div class="xl:grid xl:grid-cols-2">
+        <div class="xl:pr-10">
+          <h1
+            class="h-full 2xl:mt-0 font-InterExtrabold xl:text-[60px] text-custom-darkBlue xl:leading-[60px] xl:mb-0 xl:mt-0 lg:mt-6 text-[40px] leading-[40px] mb-6 mt-7">
+            The Bright Future of Web 3.0?
+          </h1>
+        </div>
+        <div class="xl:pl-4 pt-8">
+          <p class="font-Inter text-custom-grayishblue text-[15px]">
+            We dive into the next evolution of the web that claims to put the
+            power of the platforms back into the hands of the people. But is
+            it really fulfilling its promise?
+          </p>
+          <div class="xl:pt-20 md:pt-4">
+            <button class="bg-custom-red 2xl:mt-16 xl:mt-11 xl:mb-0 mt-4 mb-16">
+              <p class="text-white text-[15px] hover:bg-custom-darkblue px-6 py-4 font-Interbold tracking-[8px]">
+                READ MORE
+              </p>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-custom-darkblue xl:mb-0">
+      <div class="px-7 pt-12 pb-6">
+        <h1 class="text-custom-orange text-[42px] font-Interbold">New</h1>
+        <h2 class="text-white font-Interbold text-xl xl:mt-16 md:mt-6 hover:text-custom-orange cursor-pointer">
+          Hydrogen VS Electric Cars
+        </h2>
+        <p class="text-custom-grayishblue text-[15px] mb-6 mt-8 font-Inter pr-3 leading-7">
+          Will hydrogen-fueled cars ever catch up to EVs?
+        </p>
+        <hr />
+        <h2 class="text-white font-Interbold text-xl mt-6 hover:text-custom-orange cursor-pointer">
+          The Downsides of AI Aritstry
+        </h2>
+        <p class="text-custom-grayishblue text-[15px] mb-6 mt-8 font-Inter leading-7">
+          What are the possible adverse effects of on-demand AI image
+          generation?
+        </p>
+        <hr />
+        <h2 class="text-white font-Interbold text-xl mt-6 hover:text-custom-orange cursor-pointer">
+          Is VC Funding Drying Up?
+        </h2>
+        <p class="text-custom-grayishblue text-[15px] mt-8 font-Inter leading-7">
+          Private funding by VC firms is down 50% YOY. We take a look at what
+          that means.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="xl:grid xl:grid-cols-3 xl:mx-[168px] lg:mx-[150px] xl:mt-[65px] xl:mb-4 mt-[70px] mb-20">
+    <div class="xl:mt-0 xl:mx-0 xl:mb-0 lg:mx-0 mb-9 mx-5">
+      <div class="grid xl:grid-cols-[28%_72%] grid-cols-[30%_70%]">
+        <div>
+          <img class="h-full object-cover pt-2" src="./assets/images/image-retro-pcs.jpg" alt="Pc Retro IMG" />
+        </div>
+        <div class="pl-6 xl:pr-4">
+          <div class="h-full">
+            <h1 class="font-Interbold text-[32px] text-custom-grayishblue xl:mb-1 md:mb-16">
+              01
+            </h1>
+            <p class="font-InterExtrabold text-lg mb-[6px] cursor-pointer hover:text-custom-red">
+              Reviving Retro PCs
+            </p>
+            <p class="font-Inter text-custom-grayishblue text-[15px] leading-[26px]">
+              What happens when old PCs are given modern upgrades?
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="xl:mt-0 xl:mx-0 xl:mb-0 lg:mx-0 mb-9 mx-5">
+      <div class="grid xl:grid-cols-[28%_72%] grid-cols-[30%_70%]">
+        <div>
+          <img class="h-full object-cover pt-2" src="./assets/images/image-top-laptops.jpg" alt="KeyboardIMG" />
+        </div>
+        <div class="pl-6">
+          <div class="h-full">
+            <h1 class="font-Interbold text-[32px] text-custom-grayishblue xl:mb-1 md:mb-16">
+              02
+            </h1>
+            <p class="font-InterExtrabold text-lg mb-[6px] cursor-pointer hover:text-custom-red xl:pr-3">
+              Top 10 Laptops of 2022
+            </p>
+            <p class="font-Inter text-custom-grayishblue text-[15px] leading-[26px] xl:pr-8">
+              Our best picks for various needs and budgets.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="xl:mt-0 xl:mx-0 xl:mb-0 lg:mx-0 mb-9 mx-5">
+      <div class="grid xl:grid-cols-[28%_72%] grid-cols-[30%_70%]">
+        <div>
+          <img class="h-full object-cover pt-2" src="./assets/images/image-gaming-growth.jpg" alt="ControllerImg" />
+        </div>
+        <div class="pl-6">
+          <div class="h-full">
+            <h1 class="font-Interbold text-[32px] text-custom-grayishblue xl:mb-1 md:mb-16">
+              03
+            </h1>
+            <p class="font-InterExtrabold text-lg mb-[6px] cursor-pointer hover:text-custom-red">
+              The Growth of Gaming
+            </p>
+            <p class="font-Inter text-custom-grayishblue text-[15px] leading-[26px]">
+              How the pandemic has sparked fresh opportunities.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Bottom Footer -->
+  <div class="attribution">
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a
+      href="#">Zahid Afsar</a>.
+  </div>
+
+  <script src="./scripts/app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+</body>
+
+</html>
