@@ -6,9 +6,10 @@
 
 // Download and open the project, the prototype of the site is in the design folder inside the code.  Copy the design with the best of your abilities using the sources provided in the code.
 
-// Peer Reviewed by : 
+// Peer Reviewed by : Jeriah Marson 4:03
 
-// Peer Comment : 
+// Peer Comment : Everything looks great, all hover effects work and the responsivness works great as well. The way the tablet page looks is cool and different than mine
+
 
 
 
